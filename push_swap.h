@@ -23,17 +23,12 @@ typedef struct s_node
 	struct s_node	*next;
 } t_node;
 
-typedef struct s_list_stack
-{
-	t_node	*top;
-	int			size;
-} t_stack;
-
-static int	is_valid_number(char *str);
-static int	ft_atoi(const char *str);
-t_stack	*initialize_stack(void);
+int	is_valid_number(char *str);
+int	ft_atoi(const char *str);
 t_node	*create_node(int value);
-int	push_node(t_stack *stack, int value);
-void	free_stack(t_stack *stack);
+int	push_node(t_node **first, int *size, int value);
+void	free_list(t_node *first);
+void	print_list(t_node *first); //borrar
+void	ft_putnbr(int n); //borrar
 
 #endif

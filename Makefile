@@ -12,8 +12,9 @@
 
 NAME = push_swap.a
 
-SRC = push_swap.c \
-push_swap.c \
+SRC = main.c \
+create_list.c \
+temp_functions.c \
 
 OBJ = ${SRC:.c=.o}
 
