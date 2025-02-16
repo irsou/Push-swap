@@ -13,17 +13,20 @@
 void	sa(t_node **list_a)
 {
 	swap(list_a);
+	write(1, "sa\n", 3);
 }
 
 void	sb(t_node **list_b)
 {
 	swap(list_b);
+	write(1, "sb\n", 3);
 }
 
 void	ss(t_node **list_a, t_node **list_b)
 {
 	swap(list_a);
 	swap(list_b);
+	write(1, "ss\n", 3);
 }
 
 void	swap(t_node **list_l)

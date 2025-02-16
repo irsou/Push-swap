@@ -10,16 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void pa(t_node **list_b, t_node **list_a, int *size_b,
+void	pa(t_node **list_b, t_node **list_a, int *size_b,
 	int *size_a)
 {
 	push_to(list_b, list_a, size_b, size_a);
+	write(1, "pa\n", 3);
 }
 
-void pb(t_node **list_a, t_node **list_b, int *size_a,
+void	pb(t_node **list_a, t_node **list_b, int *size_a,
 	int *size_b)
 {
 	push_to(list_a, list_b, size_a, size_b);
+	write(1, "pb\n", 3);
 }
 
 void	push_to(t_node **list_src, t_node **list_dest, int *size_src,

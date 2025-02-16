@@ -18,8 +18,8 @@
 
 typedef struct s_node
 {
-	int						content;
-	struct s_node		*next;
+	int							content;
+	struct s_node			*next;
 }	t_node;
 
 int			is_valid_number(char *str);
@@ -33,5 +33,18 @@ void		sa(t_node **list_a);
 int			is_sorted(t_node *list);
 int			find_min(t_node *list);
 int			find_position(t_node *list, int value);
+void		sa(t_node **list_a);
+void		sb(t_node **list_b);
+void		ss(t_node **list_a, t_node **list_b);
+void		pa(t_node **list_b, t_node **list_a, int *size_b,
+				int *size_a);
+void		pb(t_node **list_a, t_node **list_b, int *size_a,
+				int *size_b);
+void		ra(t_node **list_a);
+void		rb(t_node **list_b);
+void		rr(t_node **list_a, t_node **list_b);
+void		rra(t_node **list_a);
+void		rrb(t_node **list_b);
+void		rrr(t_node **list_a, t_node **list_b);
 
 #endif

@@ -51,3 +51,64 @@ int	find_position(t_node *list, int value)
 	}
 	return (-1);
 }
+
+// void *sort_three(t_node **list_l){
+
+// 	int		a;
+// 	int		b;
+// 	int		c;
+
+// 	if (is_sorted(*list_l))
+// 		return ;
+// 	a = (*list_l)->content;
+// 	b = (*list_l)->next->content;
+// 	c = (*list_l)->next->next->content;
+// 	if (a < b)
+// 	{
+// 		if (c < b && c >a)
+// 		{
+// 			ra(list_l);
+// 			sa(list_l);
+// 			rra(list_l);
+// 		}
+// 		if (c < a)
+// 			rra(list_l);
+// 	}
+// 	else
+// 	{
+// 		sa(list_l);
+// 		sort_three(list_l);
+// 	}
+
+// return ;
+// }
+
+void	*sort_three(t_node **list_l)
+{
+	int		a;
+	int		b;
+	int		c;
+
+	if (is_sorted(*list_l))
+		return ;
+	a = (*list_l)->content;
+	b = (*list_l)->next->content;
+	c = (*list_l)->next->next->content;
+	if (a < b && b > c && a < c)
+	{
+		sa(list_l);
+		ra(list_l);
+	}
+	else if (a < b && b > c && c < a)
+		rra(list_l);
+	else if (a > b && c > a && c > b)
+		sa(list_l);
+	else if (a > b && c < a && c > b)
+		ra(list_l);
+	else if (a > b && c < a && c < b)
+	{
+		sa(list_l);
+		rra(list_l);
+	}
+	return ;
+}
