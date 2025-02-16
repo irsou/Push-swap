@@ -22,7 +22,7 @@ Reverse rotate: Shifts all elements of a stack down by one position, so the last
 - rrb (reverse rotate stack b)
 - rrr (reverse rotate stack a & stack b)
 
-Example) To get 1-2-3:
+Example with 3 numbers:
 - `1`-`2`-`3`  ✔️
 - `2`-`1`-`3` => sa => `1`-`2`-`3`
 - `3`-`1`-`2` => ra => `1`-`2`-`3`
