@@ -22,7 +22,7 @@ Reverse rotate: Shifts all elements of a stack down by one position, so the last
 - rrb (reverse rotate stack b)
 - rrr (reverse rotate stack a & stack b)
 
-For 3 nodes:
+Example: Sorting 3 nodes:
 - b-a-c: sa
 - c-b-a: sa & rra
 - b-c-a: rra
