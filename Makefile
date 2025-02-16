@@ -15,6 +15,11 @@ NAME = push_swap.a
 SRC = main.c \
 create_list.c \
 temp_functions.c \
+movements/mov_push.c \
+movements/mov_reverse_rotate.c \
+movements/mov_rotate.c \
+movements/mov_swap.c \
+list_utils.c \
 
 OBJ = ${SRC:.c=.o}
 

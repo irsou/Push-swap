@@ -10,44 +10,44 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "push_swap.h"
 
 int	main(int argc, char **argv)
 {
-	t_node	*first_a;
-	t_node	*first_b;
-	int			size_a;
+	t_node	*list_a;
+	t_node	*list_b;
+	int		size_a;
 	//int			size_b;
-	int			pos;
+	int		pos;
 
-	if(argc < 2)
+	if (argc < 2)
 		return (0);
-	first_a = NULL;
-	first_b = NULL;
+	list_a = NULL;
+	list_b = NULL;
 	size_a = 0;
 	//size_b = 0;
 	pos = 1;
-	while(pos < argc)
+	while (pos < argc)
 	{
-		if(!is_valid_number(argv[pos]))
+		if (!is_valid_number(argv[pos]))
 		{
-			free_list(first_a);
-			free_list(first_b);
+			free_list(list_a);
+			free_list(list_b);
 			write(1, "Número inválido\n", 17);
 			return (1);
 		}
-		if(!push_node(&first_a, &size_a, ft_atoi(argv[pos])))
+		if (!push_node(&list_a, &size_a, ft_atoi(argv[pos])))
 		{
-			free_list(first_a);
-			free_list(first_b);
+			free_list(list_a);
+			free_list(list_b);
 			write(1, "Número inválido\n", 17);
 			return (1);
 		}
 		pos++;
 	}
-	print_list(first_a);
+	print_list(list_a);
 	write(1, "Números guardados falta ordenarlos\n", 36);
-	free_list(first_a);
-	free_list(first_b);
+	free_list(list_a);
+	free_list(list_b);
 	return (0);
 }

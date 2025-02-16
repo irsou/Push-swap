@@ -10,20 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "push_swap.h"
 
 int	is_valid_number(char *str)
 {
 	int		pos;
 
 	pos = 0;
-	if(str[pos] == '-' || str[pos] == '+')
+	if (str[pos] == '-' || str[pos] == '+')
 		pos++;
-	if(!str[pos])
+	if (!str[pos])
 		return (0);
-	while(str[pos])
+	while (str[pos])
 	{
-		if(str[pos] < '0' || str[pos] > '9')
+		if (str[pos] < '0' || str[pos] > '9')
 			return (0);
 		pos++;
 	}
@@ -39,14 +39,14 @@ int	ft_atoi(const char *str)
 	res = 0;
 	sign = 1;
 	pos = 0;
-	if (str[pos]== '-')
+	if (str[pos] == '-')
 	{
 		sign = -1;
 		pos++;
 	}
-	else if (str[pos]== '+')
+	else if (str[pos] == '+')
 		pos++;
-	while(str[pos] >= '0' && str[pos]<= '9')
+	while (str[pos] >= '0' && str[pos] <= '9')
 	{
 		res = (res * 10) + (str[pos] - '0');
 		pos++;
@@ -58,8 +58,8 @@ t_node	*create_node(int value)
 {
 	t_node	*node;
 
-	node = (t_node*)malloc(sizeof(t_node));
-	if(!node)
+	node = (t_node *)malloc(sizeof(t_node));
+	if (!node)
 		return (NULL);
 	node->content = value;
 	node->next = NULL;
@@ -71,7 +71,7 @@ int	push_node(t_node **first, int *size, int value)
 	t_node	*new_node;
 
 	new_node = create_node(value);
-	if(!new_node)
+	if (!new_node)
 		return (0);
 	new_node->next = *first;
 	*first = new_node;
@@ -85,7 +85,7 @@ void	free_list(t_node *first)
 	t_node	*next;
 
 	current = first;
-	while(current)
+	while (current)
 	{
 		next = current->next;
 		free(current);
