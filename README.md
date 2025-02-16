@@ -22,10 +22,10 @@ Reverse rotate: Shifts all elements of a stack down by one position, so the last
 - rrb (reverse rotate stack b)
 - rrr (reverse rotate stack a & stack b)
 
-Example: Sorting 3 nodes:
-- b-a-c: sa
-- c-b-a: sa & rra
-- b-c-a: rra
-- c-a-b: ra
-- a-c-b: sa & ra
-- a-b-c: -
+Example) To get 1-2-3:
+- `2`-`1`-`3` `+` sa `=` `1` - `2` - `3` 
+- `3`-`2`-`1` `+` sa `+` rra `=` `1` - `2` - `3` 
+- `2`-`3`-`1` `+` rra `=` `1` - `2` - `3` 
+- `3`-`1`-`2` `+` ra `=` `1` - `2` - `3` 
+- `1`-`3`-`2` `+` sa `+` ra `=` `1` - `2` - `3` 
+- `1`-`2`-`3` 
