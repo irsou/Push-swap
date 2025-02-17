@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   mov_reverse_rotate.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: isousa-s <isousa-s@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: isousa-s <isousa-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 16:55:12 by isousa-s          #+#    #+#             */
-/*   Updated: 2025/02/15 16:55:12 by isousa-s         ###   ########.fr       */
+/*   Updated: 2025/02/17 19:25:23 by isousa-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../push_swap.h"
 
 void	rra(t_node **list_a)
 {
@@ -41,7 +43,7 @@ void	reverse_rotate_list(t_node **list_l)
 	while (last->next)
 	{
 		prev = last;
-		last = last->*list_l;
+		last = last->next;
 	}
 	prev->next = NULL;
 	last->next = *list_l;

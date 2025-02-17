@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: isousa-s <isousa-s@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: isousa-s <isousa-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 11:23:38 by isousa-s          #+#    #+#             */
-/*   Updated: 2025/02/16 11:23:38 by isousa-s         ###   ########.fr       */
+/*   Updated: 2025/02/17 19:47:23 by isousa-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 int	is_sorted(t_node *list)
 {
@@ -52,37 +54,6 @@ int	find_position(t_node *list, int value)
 	return (-1);
 }
 
-// void *sort_three(t_node **list_l){
-
-// 	int		a;
-// 	int		b;
-// 	int		c;
-
-// 	if (is_sorted(*list_l))
-// 		return ;
-// 	a = (*list_l)->content;
-// 	b = (*list_l)->next->content;
-// 	c = (*list_l)->next->next->content;
-// 	if (a < b)
-// 	{
-// 		if (c < b && c >a)
-// 		{
-// 			ra(list_l);
-// 			sa(list_l);
-// 			rra(list_l);
-// 		}
-// 		if (c < a)
-// 			rra(list_l);
-// 	}
-// 	else
-// 	{
-// 		sa(list_l);
-// 		sort_three(list_l);
-// 	}
-
-// return ;
-// }
-
 void	*sort_three(t_node **list_l)
 {
 	int		a;
@@ -109,6 +80,37 @@ void	*sort_three(t_node **list_l)
 	{
 		sa(list_l);
 		rra(list_l);
+	}
+	return ;
+}
+
+void	*sort_five(t_node **list_a, t_node **list_b,int *size_b, int *size_a)
+{
+	int		min;
+	int		pos;
+	int		pushed;
+
+	if (is_sorted(*list_a))
+		return ;
+	while (pushed < 2)
+	{
+		min = find_min(*list_a);
+		pos = find_position(*list_a, min);
+		while ((*list_a)->content != min)
+		{
+			if (pos <=2)
+				ra(list_a);
+			else
+				rra(list_a);
+		}
+		pb(list_a, list_b, size_a, size_b);
+		pushed++;
+	}
+	sort_three(list_a);
+	while (pushed > 0)
+	{
+		pa(list_b, list_a, size_b, size_a);
+		pushed--;
 	}
 	return ;
 }

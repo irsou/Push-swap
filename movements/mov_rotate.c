@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   mov_rotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: isousa-s <isousa-s@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: isousa-s <isousa-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 16:55:22 by isousa-s          #+#    #+#             */
-/*   Updated: 2025/02/15 16:55:22 by isousa-s         ###   ########.fr       */
+/*   Updated: 2025/02/17 19:22:04 by isousa-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../push_swap.h"
 
 void	ra(t_node **list_a)
 {

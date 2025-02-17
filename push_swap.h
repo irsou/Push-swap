@@ -46,5 +46,6 @@ void		rr(t_node **list_a, t_node **list_b);
 void		rra(t_node **list_a);
 void		rrb(t_node **list_b);
 void		rrr(t_node **list_a, t_node **list_b);
+void		*sort_five(t_node **list_a, t_node **list_b,int *size_b, int *size_a);
 
 #endif

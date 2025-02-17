@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   mov_push.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: isousa-s <isousa-s@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: isousa-s <isousa-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 16:55:15 by isousa-s          #+#    #+#             */
-/*   Updated: 2025/02/15 16:55:15 by isousa-s         ###   ########.fr       */
+/*   Updated: 2025/02/17 19:22:13 by isousa-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../push_swap.h"
 
 void	pa(t_node **list_b, t_node **list_a, int *size_b,
 	int *size_a)

@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 	t_node	*list_a;
 	t_node	*list_b;
 	int		size_a;
-	//int			size_b;
+	int		size_b;
 	int		pos;
 
 	if (argc < 2)
@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 	list_a = NULL;
 	list_b = NULL;
 	size_a = 0;
-	//size_b = 0;
+	size_b = 0;
 	pos = 1;
 	while (pos < argc)
 	{
@@ -47,6 +47,8 @@ int	main(int argc, char **argv)
 	}
 	print_list(list_a);
 	write(1, "Números guardados falta ordenarlos\n", 36);
+	if (size_a == 5)
+		sort_five(&list_a, &list_b, &size_a, &size_b);
 	free_list(list_a);
 	free_list(list_b);
 	return (0);
