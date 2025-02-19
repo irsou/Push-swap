@@ -6,7 +6,7 @@
 /*   By: isousa-s <isousa-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 11:23:38 by isousa-s          #+#    #+#             */
-/*   Updated: 2025/02/17 19:47:23 by isousa-s         ###   ########.fr       */
+/*   Updated: 2025/02/19 20:27:59 by isousa-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	find_position(t_node *list, int value)
 	return (-1);
 }
 
-void	*sort_three(t_node **list_l)
+void	sort_three(t_node **list_l)
 {
 	int		a;
 	int		b;
@@ -84,12 +84,13 @@ void	*sort_three(t_node **list_l)
 	return ;
 }
 
-void	*sort_five(t_node **list_a, t_node **list_b,int *size_b, int *size_a)
+void	sort_five(t_node **list_a, t_node **list_b, int *size_b, int *size_a)
 {
 	int		min;
 	int		pos;
 	int		pushed;
 
+	pushed = 0;
 	if (is_sorted(*list_a))
 		return ;
 	while (pushed < 2)
@@ -98,7 +99,7 @@ void	*sort_five(t_node **list_a, t_node **list_b,int *size_b, int *size_a)
 		pos = find_position(*list_a, min);
 		while ((*list_a)->content != min)
 		{
-			if (pos <=2)
+			if (pos <= 2)
 				ra(list_a);
 			else
 				rra(list_a);

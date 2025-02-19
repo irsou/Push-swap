@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap.a
+NAME = push_swap
 
 SRC = main.c \
 create_list.c \
@@ -21,7 +21,7 @@ movements/mov_rotate.c \
 movements/mov_swap.c \
 list_utils.c \
 
-OBJ = ${SRC:.c=.o}
+OBJ = $(SRC:.c=.o)
 
 CC = cc
 FLAGS = -Wall -Werror -Wextra
@@ -29,18 +29,18 @@ RM = rm -f
 AR = ar rcs
 
 %.o: %.c push_swap.h
-	${CC} ${FLAGS} -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 all: $(NAME)
 
-$(NAME): ${OBJ}
-	${AR} ${NAME} ${OBJ}
+$(NAME): $(OBJ)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME) 
 
 clean:
-	${RM} ${OBJ}
+	$(RM) $(OBJ)
 
 fclean: clean
-	${RM} ${NAME}
+	$(RM) $(NAME)
 
 re: fclean all
 

@@ -49,6 +49,7 @@ int	main(int argc, char **argv)
 	write(1, "Números guardados falta ordenarlos\n", 36);
 	if (size_a == 5)
 		sort_five(&list_a, &list_b, &size_a, &size_b);
+	print_list(list_a);
 	free_list(list_a);
 	free_list(list_b);
 	return (0);

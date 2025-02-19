@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-# define PUSH_SAWP_H
+# define PUSH_SWAP_H
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -19,7 +19,7 @@
 typedef struct s_node
 {
 	int							content;
-	struct s_node			*next;
+	struct s_node				*next;
 }	t_node;
 
 int			is_valid_number(char *str);
@@ -46,6 +46,12 @@ void		rr(t_node **list_a, t_node **list_b);
 void		rra(t_node **list_a);
 void		rrb(t_node **list_b);
 void		rrr(t_node **list_a, t_node **list_b);
-void		*sort_five(t_node **list_a, t_node **list_b,int *size_b, int *size_a);
+void		sort_five(t_node **list_a, t_node **list_b, int *size_b,
+				int *size_a);
+void		push_to(t_node **list_src, t_node **list_dest, int *size_src,
+				int *size_dest);
+void		reverse_rotate_list(t_node **list_l);
+void		rotate_list(t_node **list_l);
+void		swap(t_node **list_l);
 
 #endif
