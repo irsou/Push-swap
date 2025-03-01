@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: isousa-s <isousa-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: isousa-s <isousa-s@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 11:23:38 by isousa-s          #+#    #+#             */
-/*   Updated: 2025/02/19 20:27:59 by isousa-s         ###   ########.fr       */
+/*   Updated: 2025/03/01 17:00:11 by isousa-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,23 @@ int	find_min(t_node *list)
 	return (min);
 }
 
+/*int	find_min_max(t_node *list, int *min, int *max)
+{
+	int		min_num;
+
+	if (!list)
+		return (0);
+		min_num = list->content;
+	while (list)
+	{
+		if (list->content < min_num)
+		min_num = list->content;
+		list = list->next;
+	}
+	return (min_num);
+}*/
+
+
 int	find_position(t_node *list, int value)
 {
 	int		pos;
@@ -54,7 +71,7 @@ int	find_position(t_node *list, int value)
 	return (-1);
 }
 
-void	sort_three(t_node **list_l)
+void	sort_three(t_node **list_l, int *movements)
 {
 	int		a;
 	int		b;
@@ -67,24 +84,24 @@ void	sort_three(t_node **list_l)
 	c = (*list_l)->next->next->content;
 	if (a < b && b > c && a < c)
 	{
-		sa(list_l);
-		ra(list_l);
+		sa(list_l, movements);
+		ra(list_l, movements);
 	}
 	else if (a < b && b > c && c < a)
-		rra(list_l);
+		rra(list_l, movements);
 	else if (a > b && c > a && c > b)
-		sa(list_l);
+		sa(list_l, movements);
 	else if (a > b && c < a && c > b)
-		ra(list_l);
+		ra(list_l, movements);
 	else if (a > b && c < a && c < b)
 	{
-		sa(list_l);
-		rra(list_l);
+		sa(list_l, movements);
+		rra(list_l, movements);
 	}
 	return ;
 }
 
-void	sort_five(t_node **list_a, t_node **list_b, int *size_b, int *size_a)
+void	sort_five(t_node **list_a, t_node **list_b, int *size_b, int *size_a, int *movements)
 {
 	int		min;
 	int		pos;
@@ -100,17 +117,17 @@ void	sort_five(t_node **list_a, t_node **list_b, int *size_b, int *size_a)
 		while ((*list_a)->content != min)
 		{
 			if (pos <= 2)
-				ra(list_a);
+				ra(list_a, movements);
 			else
-				rra(list_a);
+				rra(list_a, movements);
 		}
-		pb(list_a, list_b, size_a, size_b);
+		pb(list_a, list_b, size_a, size_b, movements);
 		pushed++;
 	}
-	sort_three(list_a);
+	sort_three(list_a, movements);
 	while (pushed > 0)
 	{
-		pa(list_b, list_a, size_b, size_a);
+		pa(list_b, list_a, size_b, size_a, movements);
 		pushed--;
 	}
 	return ;

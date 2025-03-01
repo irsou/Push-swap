@@ -37,7 +37,7 @@ void	print_list(t_node *first)
 	t_node	*current;
 
 	current = first;
-	write(1, "Numeritos: ", 11);
+	write(1, "Números: ", 9);
 	while (current)
 	{
 		ft_putnbr(current->content);

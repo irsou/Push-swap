@@ -19,7 +19,9 @@ int	main(int argc, char **argv)
 	int		size_a;
 	int		size_b;
 	int		pos;
+	int		movements;
 
+	movements = 0;
 	if (argc < 2)
 		return (0);
 	list_a = NULL;
@@ -45,12 +47,29 @@ int	main(int argc, char **argv)
 		}
 		pos++;
 	}
+
 	print_list(list_a);
-	write(1, "Números guardados falta ordenarlos\n", 36);
-	if (size_a == 5)
-		sort_five(&list_a, &list_b, &size_a, &size_b);
+	if (is_sorted(list_a))
+		return (0);
+
+	if (size_a <= 3)
+		sort_three(&list_a, &movements);
+
+	else if (size_a <= 5)
+		sort_five(&list_a, &list_b, &size_a, &size_b, &movements);
+
+	// else if(size_a <= 100)
+	// 	sort_big_list(&list_a, &list_b, &size_a, &size_b, &movements);
+	// else
+	// 	radix_sort(&list_a, &list_b, &size_a, &size_b, &movements);
+	write(1,"Movimientos: " ,13);
+	ft_putnbr(movements);
+	write(1,"\n" ,1);
+	write(1,"Lista ordenada: " ,16);
 	print_list(list_a);
+	write(1,"\n" ,1);
 	free_list(list_a);
 	free_list(list_b);
+
 	return (0);
 }
