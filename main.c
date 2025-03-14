@@ -14,8 +14,8 @@
 
 int	main(int argc, char **argv)
 {
-	t_node	*list_a;
-	t_node	*list_b;
+	t_stack	*list_a;
+	t_stack	*list_b;
 	int		size_a;
 	int		size_b;
 	int		pos;
@@ -35,20 +35,20 @@ int	main(int argc, char **argv)
 		{
 			free_list(list_a);
 			free_list(list_b);
-			write(1, "Número inválido\n", 17);
+			//write(1, "Número inválido\n", 17);
 			return (1);
 		}
 		if (!push_node(&list_a, &size_a, ft_atoi(argv[pos])))
 		{
 			free_list(list_a);
 			free_list(list_b);
-			write(1, "Número inválido\n", 17);
+			//write(1, "Número inválido\n", 17);
 			return (1);
 		}
 		pos++;
 	}
 
-	print_list(list_a);
+	//print_list(list_a);
 	if (is_sorted(list_a))
 		return (0);
 
@@ -60,14 +60,16 @@ int	main(int argc, char **argv)
 
 	// else if(size_a <= 100)
 	// 	sort_big_list(&list_a, &list_b, &size_a, &size_b, &movements);
-	// else
-	// 	radix_sort(&list_a, &list_b, &size_a, &size_b, &movements);
+	else
+		big_sort(&list_a, &list_b, &size_a, &size_b, &movements);
+
+	//write(1,"\n" ,1);
 	write(1,"Movimientos: " ,13);
 	ft_putnbr(movements);
-	write(1,"\n" ,1);
-	write(1,"Lista ordenada: " ,16);
-	print_list(list_a);
-	write(1,"\n" ,1);
+	//write(1,"\n" ,1);
+	//write(1,"Lista ordenada: " ,16);
+	//print_list(list_a);
+	//write(1,"\n" ,1);
 	free_list(list_a);
 	free_list(list_b);
 

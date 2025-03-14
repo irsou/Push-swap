@@ -32,9 +32,9 @@ void	ft_putnbr(int n)
 	write(1, &c, 1);
 }
 
-void	print_list(t_node *first)
+void	print_list(t_stack *first)
 {
-	t_node	*current;
+	t_stack	*current;
 
 	current = first;
 	write(1, "Números: ", 9);
@@ -45,4 +45,36 @@ void	print_list(t_node *first)
 		current = current->next;
 	}
 	write(1, "\n", 1);
+
+	// current = first;
+	// write(1, "Índices: ", 9);
+	// while (current)
+	// {
+	// 	ft_putnbr(current->index);
+	// 	write(1, " ", 1);
+	// 	current = current->next;
+	// }
+	// write(1, "\n", 1);
+
+	// current = first;
+	// write(1, "Costos: ", 8);
+	// while (current)
+	// {
+	// 	ft_putnbr(current->cost);
+	// 	write(1, " ", 1);
+	// 	current = current->next;
+	// }
+	// write(1, "\n", 1);
+
+	// current = first;
+	// write(1, "Mejores movimientos:\n", 21);
+	// while (current)
+	// {
+	// 	if (current->best_moves)
+	// 		write(1, current->best_moves, ft_strlen(current->best_moves));
+	// 	else
+	// 		write(1, "(sin movimientos)", 17);
+	// 	write(1, "\n", 1);
+	// 	current = current->next;
+	// }
 }
