@@ -66,10 +66,11 @@ int	main(int argc, char **argv)
 	//write(1,"\n" ,1);
 	write(1,"Movimientos: " ,13);
 	ft_putnbr(movements);
-	//write(1,"\n" ,1);
-	//write(1,"Lista ordenada: " ,16);
-	//print_list(list_a);
-	//write(1,"\n" ,1);
+	write(1,"\n" ,1);
+	write(1,"Lista ordenada: " ,16);
+	print_list(list_a);
+	print_list(list_b);
+	write(1,"\n" ,1);
 	free_list(list_a);
 	free_list(list_b);
 

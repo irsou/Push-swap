@@ -6,7 +6,7 @@
 /*   By: isousa-s <isousa-s@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 11:23:38 by isousa-s          #+#    #+#             */
-/*   Updated: 2025/03/10 20:06:22 by isousa-s         ###   ########.fr       */
+/*   Updated: 2025/03/14 20:50:26 by isousa-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,23 @@ int	find_min(t_stack *list)
 	}
 	return (min);
 }
+
+int	find_min_index(t_stack *list)
+{
+	int		min;
+
+	if (!list)
+		return (0);
+	min = list->index;
+	while (list)
+	{
+		if (list->index < min)
+			min = list->index;
+		list = list->next;
+	}
+	return (min);
+}
+
 
 int	find_max(t_stack *list)
 {

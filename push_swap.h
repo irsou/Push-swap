@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
-
+# include <stdbool.h>
 
 typedef struct s_operations
 {
@@ -103,5 +103,6 @@ void move_expensive_nodes_to_b(t_stack **head_a, t_stack **head_b, int *movement
 void push_and_sort(t_stack **list_a, t_stack **list_b, int *size_a, int *size_b, int *movements);
 int get_real_position(t_stack *head_a, t_stack *node);
 void evaluate_ra_rra(t_stack **list_a, int current_value, int *movements);
+int	find_min_index(t_stack *list);
 
 #endif
