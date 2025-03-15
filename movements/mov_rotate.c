@@ -6,31 +6,31 @@
 /*   By: isousa-s <isousa-s@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 16:55:22 by isousa-s          #+#    #+#             */
-/*   Updated: 2025/03/14 19:06:56 by isousa-s         ###   ########.fr       */
+/*   Updated: 2025/03/15 17:13:07 by isousa-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ra(t_stack **list_a, int *movements)
+void	ra(t_stack **list_a)
 {
 	rotate_list(list_a);
-	(*movements)++;
+
 	write(1, "ra\n", 3);
 }
 
-void	rb(t_stack **list_b, int *movements)
+void	rb(t_stack **list_b)
 {
 	rotate_list(list_b);
-	(*movements)++;
+
 	write(1, "rb\n", 3);
 }
 
-void	rr(t_stack **list_a, t_stack **list_b, int *movements)
+void	rr(t_stack **list_a, t_stack **list_b)
 {
 	rotate_list(list_a);
 	rotate_list(list_b);
-	(*movements)++;
+
 	write(1, "rr\n", 3);
 }
 

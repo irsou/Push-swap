@@ -21,13 +21,9 @@ movements/mov_rotate.c \
 movements/mov_swap.c \
 list_utils.c \
 basic_utils.c \
-check_moves_in_a.c \
-push_and_sort.c \
 sort_small.c \
 sort_big.c \
-chunks.c \
-check_moves.c \
-cal_in_b.c \
+
 
 OBJ = $(SRC:.c=.o)
 

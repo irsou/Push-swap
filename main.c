@@ -19,9 +19,8 @@ int	main(int argc, char **argv)
 	int		size_a;
 	int		size_b;
 	int		pos;
-	int		movements;
 
-	movements = 0;
+
 	if (argc < 2)
 		return (0);
 	list_a = NULL;
@@ -53,26 +52,25 @@ int	main(int argc, char **argv)
 		return (0);
 
 	if (size_a <= 3)
-		sort_three(&list_a, &movements);
+		sort_three(&list_a);
 
 	else if (size_a <= 5)
-		sort_five(&list_a, &list_b, &size_a, &size_b, &movements);
+		sort_five(&list_a, &list_b, &size_a, &size_b);
 
 	// else if(size_a <= 100)
-	// 	sort_big_list(&list_a, &list_b, &size_a, &size_b, &movements);
+	// 	sort_big_list(&list_a, &list_b, &size_a, &size_b);
 	else
-		big_sort(&list_a, &list_b, &size_a, &size_b, &movements);
+		big_sort(&list_a, &list_b, &size_a, &size_b);
 
 	//write(1,"\n" ,1);
-	write(1,"Movimientos: " ,13);
-	ft_putnbr(movements);
-	write(1,"\n" ,1);
-	write(1,"Lista ordenada: " ,16);
-	print_list(list_a);
-	print_list(list_b);
-	write(1,"\n" ,1);
-	free_list(list_a);
-	free_list(list_b);
+
+	// write(1,"\n" ,1);
+	// write(1,"Lista ordenada: " ,16);
+	// print_list(list_a);
+	// print_list(list_b);
+	// write(1,"\n" ,1);
+	// free_list(list_a);
+	// free_list(list_b);
 
 	return (0);
 }
