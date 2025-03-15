@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_small.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: isousa-s <isousa-s@student.42urduliz.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/15 20:35:56 by isousa-s          #+#    #+#             */
+/*   Updated: 2025/03/15 20:35:56 by isousa-s         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	sort_three(t_stack **list_l)
@@ -27,19 +39,16 @@ void	sort_three(t_stack **list_l)
 		sa(list_l);
 		rra(list_l);
 	}
-	return ;
 }
 
 void	sort_five(t_stack **list_a, t_stack **list_b, int *size_b, int *size_a)
 {
 	int		min;
 	int		pos;
-	int		pushed;
 
-	pushed = 0;
 	if (is_sorted(*list_a))
 		return ;
-	while (pushed < 2)
+	while (*size_a > 3)
 	{
 		min = find_min(*list_a);
 		pos = find_position(*list_a, min);
@@ -51,13 +60,10 @@ void	sort_five(t_stack **list_a, t_stack **list_b, int *size_b, int *size_a)
 				rra(list_a);
 		}
 		pb(list_a, list_b, size_a, size_b);
-		pushed++;
 	}
 	sort_three(list_a);
-	while (pushed > 0)
+	while (*size_b > 0)
 	{
 		pa(list_b, list_a, size_b, size_a);
-		pushed--;
 	}
-	return ;
 }

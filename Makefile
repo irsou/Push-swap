@@ -23,6 +23,7 @@ list_utils.c \
 basic_utils.c \
 sort_small.c \
 sort_big.c \
+sort_big_utils.c \
 
 
 OBJ = $(SRC:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: isousa-s <isousa-s@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 16:55:22 by isousa-s          #+#    #+#             */
-/*   Updated: 2025/03/15 17:13:07 by isousa-s         ###   ########.fr       */
+/*   Updated: 2025/03/15 20:33:42 by isousa-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,12 @@
 void	ra(t_stack **list_a)
 {
 	rotate_list(list_a);
-
 	write(1, "ra\n", 3);
 }
 
 void	rb(t_stack **list_b)
 {
 	rotate_list(list_b);
-
 	write(1, "rb\n", 3);
 }
 
@@ -30,7 +28,6 @@ void	rr(t_stack **list_a, t_stack **list_b)
 {
 	rotate_list(list_a);
 	rotate_list(list_b);
-
 	write(1, "rr\n", 3);
 }
 

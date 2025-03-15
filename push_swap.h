@@ -12,28 +12,8 @@
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <limits.h>
-# include <stdbool.h>
-
-typedef struct s_operations
-{
-	int pa;
-	int sa;
-	int sb;
-	int ss;
-	int pb;
-  int ra;
-  int rb;
-  int rr;
-  int rra;
-  int rrb;
-  int rrr;
-	int max_b;
-	int min_b;
-} t_operations;
+# include <unistd.h> //write
+# include <stdlib.h> //malloc & free
 
 typedef struct s_node
 {
@@ -42,28 +22,27 @@ typedef struct s_node
 	int							cost;
 	char						*best_moves;
 	struct s_node				*next;
-	t_operations    operations;
 }	t_stack;
 
-
-
-int	ft_strncmp(const char *str, const char *str2, size_t n);
 int			is_valid_number(char *str);
-char		*ft_strdup(const char *s);
-size_t ft_strlen(const char *str);
-char	*ft_strjoin(char const *s1, char const *s2);
-void	*ft_memset(void *ptr, int value, size_t length);
+int			get_max(int a, int b);
+int			get_abs(int x);
+t_stack		*get_min_index(t_stack *stack);
+t_stack		*get_closest_to_target(t_stack *stack_b, int target_value);
+int			count_moves_to_top(t_stack *stack, t_stack *node);
+int			calculate_cost(int pos, int stack_size);
+int			find_target_position(t_stack *stack_a, int b_index);
 int			ft_atoi(const char *str);
-t_stack	*create_node(int value);
+t_stack		*create_node(int value);
 int			push_node(t_stack **first, int *size, int value);
 void		free_list(t_stack *first);
-void		print_list(t_stack *first); //borrar
-void		ft_putnbr(int n); //borrar
+void		print_list(t_stack *first);
+void		ft_putnbr(int n);
 int			is_sorted(t_stack *list);
 int			find_min(t_stack *list);
 int			find_max(t_stack *list);
-t_stack	*find_max_node(t_stack *list);
-t_stack	*find_min_node(t_stack *list);
+t_stack		*find_max_node(t_stack *list);
+t_stack		*find_min_node(t_stack *list);
 int			find_position(t_stack *list, int value);
 void		assign_node_index(t_stack *stack);
 void		sa(t_stack **list_a);
@@ -82,27 +61,14 @@ void		rrr(t_stack **list_a, t_stack **list_b);
 void		sort_three(t_stack **list_l);
 void		sort_five(t_stack **list_a, t_stack **list_b, int *size_b,
 				int *size_a);
-// void		chunks_sort(t_stack **stack_a, t_stack **stack_b, int *size_a, int *size_b);
-// void	hybrid_sort(t_stack **stack_a, t_stack **stack_b, int *size_a, int *size_b);
-void		big_sort(t_stack **list_a, t_stack **list_b, int *size_a, int *size_b);
-// void optimized_sort(t_stack **stack_a, t_stack **stack_b, int *size_a, int *size_b);
+void		big_sort(t_stack **list_a, t_stack **list_b, int *size_a,
+				int *size_b);
 void		push_to(t_stack **list_src, t_stack **list_dest, int *size_src,
 				int *size_dest);
 void		reverse_rotate_list(t_stack **list_l);
 void		rotate_list(t_stack **list_l);
-void print_stack_a(t_stack *head);
 void		swap(t_stack **list_l);
-//void check_moves(t_stack **head_a);
-//void check_moves(t_stack **head_a, t_stack **head_b);
-int get_list_size(t_stack *head);
-//void check_moves_in_a(t_stack *node, t_stack *head_a, int list_size);
-void include_sa(t_stack *head_a);
-//void sort_back_to_a(t_stack **head_a, t_stack **head_b, int *size_a, int *size_b);
-int find_position_in_b(t_stack *head_b, int value);
-void move_expensive_nodes_to_b(t_stack **head_a, t_stack **head_b);
-//void push_and_sort(t_stack **list_a, t_stack **list_b, int *size_a, int *size_b);
-int get_real_position(t_stack *head_a, t_stack *node);
-//void evaluate_ra_rra(t_stack **list_a, int current_value);
-int	find_min_index(t_stack *list);
+int			get_real_position(t_stack *head_a, t_stack *node);
+int			find_min_index(t_stack *list);
 
 #endif
