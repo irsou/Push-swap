@@ -12,6 +12,17 @@
 
 #include "push_swap.h"
 
+int is_duplicate(t_stack *list, int num)
+{
+	while (list)
+	{
+		if (list->content == num)
+			return (1);
+		list = list->next;
+	}
+	return (0);
+}
+
 void	assign_sort_type(t_stack **list_a, t_stack **list_b, int *size_a,
 	int *size_b)
 {
@@ -27,11 +38,15 @@ void	assign_sort_type(t_stack **list_a, t_stack **list_b, int *size_a,
 int	process_arguments(int argc, char **argv, t_stack **list_a, int *size_a)
 {
 	int		pos;
+	int		num;
 
 	pos = 1;
 	while (pos < argc)
 	{
-		if (!is_valid_number(argv[pos]))
+		if (!is_valid_int(argv[pos]))
+			return (0);
+		num = ft_atoi(argv[pos]);
+		if (is_duplicate(*list_a, num))
 			return (0);
 		if (!push_node(list_a, size_a, ft_atoi(argv[pos])))
 			return (0);
@@ -55,6 +70,7 @@ int	main(int argc, char **argv)
 	size_b = 0;
 	if (!process_arguments(argc, argv, &list_a, &size_a))
 	{
+		write(2, "Error\n", 6);
 		free_list(list_a);
 		free_list(list_b);
 		return (1);

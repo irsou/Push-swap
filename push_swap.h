@@ -37,12 +37,10 @@ typedef struct s_move_cost
 	int		b_pos;
 }	t_move_cost;
 
-int			is_valid_number(char *str);
+int			is_valid_int(const char *str);
 int			get_max(int a, int b);
 int			get_abs(int x);
 t_stack		*get_min_index(t_stack *stack);
-//t_stack		*get_closest_to_target(t_stack *stack_b, int target_value);
-//int			count_moves_to_top(t_stack *stack, t_stack *node);
 int			calculate_cost(int pos, int stack_size);
 int			calculate_total_cost(int cost_a, int cost_b);
 int			find_target_position(t_stack *stack_a, int b_index);
@@ -79,7 +77,6 @@ void		push_to(t_stack **list_src, t_stack **list_dest, int *size_src,
 void		reverse_rotate_list(t_stack **list_l);
 void		rotate_list(t_stack **list_l);
 void		swap(t_stack **list_l);
-int			get_real_position(t_stack *head_a, t_stack *node);
 void		rotate_to_min(t_stack **stack_a, int size_a);
 void		execute_best_moves(t_stack **stack_a, t_stack **stack_b,
 				t_move_cost move_info);

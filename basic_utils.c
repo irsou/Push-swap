@@ -51,3 +51,37 @@ int	get_abs(int x)
 	else
 		return (x);
 }
+
+int is_valid_digit(char c)
+{
+  return (c >= '0' && c <= '9');
+}
+
+int	is_valid_int(const char *str)
+{
+	long	num;
+	int		i;
+	int		sign;
+
+	i = 0;
+	sign = 1;
+	num = 0;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
+	}
+	if (!str[i])
+		return (0);
+	while (str[i])
+	{
+		if (!is_valid_digit(str[i]))
+			return (0);
+		num = num * 10 + (str[i] - '0');
+		if ((num * sign) > 2147483647 || (num * sign) < -2147483648)
+			return (0);
+		i++;
+	}
+	return (1);
+}
