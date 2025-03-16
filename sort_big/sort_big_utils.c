@@ -83,37 +83,23 @@ int	calculate_cost(int pos, int stack_size)
 		return (-(stack_size - pos));
 }
 
-int calculate_total_cost(int cost_a, int cost_b)
+int	calculate_total_cost(int cost_a, int cost_b)
 {
 	if ((cost_a >= 0 && cost_b >= 0) || (cost_a <= 0 && cost_b <= 0))
-		return get_max(get_abs(cost_a), get_abs(cost_b));
+		return (get_max(get_abs(cost_a), get_abs(cost_b)));
 	else
-		return get_abs(cost_a) + get_abs(cost_b);
+		return (get_abs(cost_a) + get_abs(cost_b));
 }
 
-int calculate_move_cost(int pos, int stack_size)
-{
-	if (pos <= stack_size / 2)
-			return pos;
-	else
-			return -(stack_size - pos);
-}
-
-
-
-
-int	find_target_position(t_stack *stack_a, int b_index)
+int	find_closest_larger_index(t_stack *stack_a, int b_index, int *pos)
 {
 	t_stack	*current;
 	int		target_index;
-	int		target_pos;
 	int		current_pos;
 	int		found;
-	int		min_index;
 
 	current = stack_a;
 	target_index = 2147483647;
-	target_pos = 0;
 	current_pos = 0;
 	found = 0;
 	while (current)
@@ -121,27 +107,44 @@ int	find_target_position(t_stack *stack_a, int b_index)
 		if (current->index > b_index && current->index < target_index)
 		{
 			target_index = current->index;
-			target_pos = current_pos;
+			*pos = current_pos;
 			found = 1;
 		}
 		current = current->next;
 		current_pos++;
 	}
-	if (!found)
+	return (found);
+}
+
+int	find_smallest_index(t_stack *stack_a)
+{
+	t_stack	*current;
+	int		target_index;
+	int		target_pos;
+	int		current_pos;
+
+	current = stack_a;
+	target_index = 2147483647;
+	target_pos = 0;
+	current_pos = 0;
+	while (current)
 	{
-		current = stack_a;
-		current_pos = 0;
-		min_index = 2147483647;
-		while (current)
+		if (current->index < target_index)
 		{
-			if (current->index < min_index)
-			{
-				min_index = current->index;
-				target_pos = current_pos;
-			}
-			current = current->next;
-			current_pos++;
+			target_index = current->index;
+			target_pos = current_pos;
 		}
+		current = current->next;
+		current_pos++;
 	}
+	return (target_pos);
+}
+
+int	find_target_position(t_stack *stack_a, int b_index)
+{
+	int		target_pos;
+
+	if (!find_closest_larger_index(stack_a, b_index, &target_pos))
+		target_pos = find_smallest_index(stack_a);
 	return (target_pos);
 }
