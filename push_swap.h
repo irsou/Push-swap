@@ -19,8 +19,6 @@ typedef struct s_node
 {
 	int							content;
 	int							index;
-	int							cost;
-	char						*best_moves;
 	struct s_node				*next;
 }	t_stack;
 
@@ -40,9 +38,6 @@ void		print_list(t_stack *first);
 void		ft_putnbr(int n);
 int			is_sorted(t_stack *list);
 int			find_min(t_stack *list);
-int			find_max(t_stack *list);
-t_stack		*find_max_node(t_stack *list);
-t_stack		*find_min_node(t_stack *list);
 int			find_position(t_stack *list, int value);
 void		assign_node_index(t_stack *stack);
 void		sa(t_stack **list_a);
@@ -69,6 +64,5 @@ void		reverse_rotate_list(t_stack **list_l);
 void		rotate_list(t_stack **list_l);
 void		swap(t_stack **list_l);
 int			get_real_position(t_stack *head_a, t_stack *node);
-int			find_min_index(t_stack *list);
 
 #endif

@@ -1,59 +1,16 @@
 /* ************************************************************************** */
-/**/
-/*:::  ::::::::   */
-/*   sort_big.c :+:  :+::+:   */
-/*+:+ +:+ +:+ */
-/*   By: isousa-s <isousa-s@student.42urduliz.co+#+  +:+   +#+*/
-/*+#+#+#+#+#+   +#+   */
-/*   Created: 2025/03/15 20:51:35 by isousa-s  #+##+# */
-/*   Updated: 2025/03/15 21:31:06 by isousa-s ###   ########.fr   */
-/**/
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_big.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: isousa-s <isousa-s@student.42urduliz.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/15 22:11:01 by isousa-s          #+#    #+#             */
+/*   Updated: 2025/03/15 22:11:05 by isousa-s         ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	calculate_moves(t_stack *stack_a, t_stack *stack_b, t_stack *current_a)
-{
-	t_stack	*target_b;
-	int		a_moves;
-	int		b_moves;
-
-	target_b = get_closest_to_target(stack_b, current_a->index);
-	a_moves = count_moves_to_top(stack_a, current_a);
-	b_moves = count_moves_to_top(stack_b, target_b);
-	if ((a_moves >= 0 && b_moves >= 0) || (a_moves <= 0 && b_moves <= 0))
-		return (get_max(get_abs(a_moves), get_abs(b_moves)));
-	return (get_abs(a_moves) + get_abs(b_moves));
-}
-
-void	find_best_moves(t_stack *stack_a, t_stack *stack_b, int *moves_a,
-	int *moves_b)
-{
-	t_stack	*current_a;
-	int		best_total;
-	int		a_moves;
-	int		b_moves;
-	int		total_moves;
-
-	current_a = stack_a;
-	best_total = 2147483647;
-	*moves_a = 0;
-	*moves_b = 0;
-	a_moves = 0;
-	b_moves = 0;
-	while (current_a)
-	{
-		total_moves = calculate_moves(stack_a, stack_b, current_a);
-		if (total_moves < best_total)
-		{
-			best_total = total_moves;
-			*moves_a = a_moves;
-			*moves_b = b_moves;
-		}
-		current_a = current_a->next;
-	}
-}
-
 
 void	find_cheapest_move(t_stack *stack_a, t_stack *stack_b, int size_a,
 	int size_b, int *best_a_pos, int *best_b_pos)
@@ -74,9 +31,9 @@ void	find_cheapest_move(t_stack *stack_a, t_stack *stack_b, int size_a,
 		int	cost_b = calculate_cost(b_pos, size_b);
 		int	total_cost;
 		if ((cost_a >= 0 && cost_b >= 0) || (cost_a <= 0 && cost_b <= 0))
-		total_cost = get_max(get_abs(cost_a), get_abs(cost_b));
+			total_cost = get_max(get_abs(cost_a), get_abs(cost_b));
 		else
-		total_cost = get_abs(cost_a) + get_abs(cost_b);
+			total_cost = get_abs(cost_a) + get_abs(cost_b);
 		if (total_cost < best_cost)
 		{
 			best_cost = total_cost;
@@ -155,7 +112,7 @@ void	big_sort(t_stack **stack_a, t_stack **stack_b, int *size_a, int *size_b)
 		min_pos++;
 		current = current->next;
 	}
-	int min_cost = calculate_cost(min_pos, *size_a);
+	int	min_cost = calculate_cost(min_pos, *size_a);
 	while (min_cost != 0)
 	{
 		if (min_cost > 0)

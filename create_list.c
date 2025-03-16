@@ -39,8 +39,6 @@ t_stack	*create_node(int value)
 		return (NULL);
 	node->content = value;
 	node->index = 0;
-	node->cost = 0;
-	node->best_moves = NULL;
 	node->next = NULL;
 	return (node);
 }
