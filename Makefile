@@ -24,7 +24,8 @@ basic_utils.c \
 sort_small/sort_small.c \
 sort_big/sort_big.c \
 sort_big/sort_big_utils.c \
-
+sort_big/execute_best_moves.c \
+sort_big/find_cheapest_move.c \
 
 OBJ = $(SRC:.c=.o)
 

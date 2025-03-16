@@ -31,50 +31,6 @@ t_stack	*get_min_index(t_stack *stack)
 	return (min_node);
 }
 
-t_stack	*get_closest_to_target(t_stack *stack_b, int target_value)
-{
-	t_stack	*closest;
-	t_stack	*current;
-	int		min_diff;
-	int		diff;
-
-	min_diff = 2147483647;
-	closest = NULL;
-	current = stack_b;
-	while (current)
-	{
-		diff = get_abs(current->index - target_value);
-		if (diff < min_diff)
-		{
-			min_diff = diff;
-			closest = current;
-		}
-		current = current->next;
-	}
-	return (closest);
-}
-
-int	count_moves_to_top(t_stack *stack, t_stack *node)
-{
-	int		count;
-	t_stack	*current;
-	int		stack_size;
-
-	count = 0;
-	current = stack;
-	stack_size = 0;
-	while (current)
-	{
-		if (current == node)
-			count = stack_size;
-		stack_size++;
-		current = current->next;
-	}
-	if (count > (stack_size / 2))
-		return (-(stack_size - count));
-	return (count);
-}
-
 int	calculate_cost(int pos, int stack_size)
 {
 	if (pos <= stack_size / 2)
@@ -91,60 +47,21 @@ int	calculate_total_cost(int cost_a, int cost_b)
 		return (get_abs(cost_a) + get_abs(cost_b));
 }
 
-int	find_closest_larger_index(t_stack *stack_a, int b_index, int *pos)
+void	rotate_to_min(t_stack **stack_a, int size_a)
 {
+	t_stack	*min_node;
+	int		min_pos;
+	int		min_cost;
 	t_stack	*current;
-	int		target_index;
-	int		current_pos;
-	int		found;
 
-	current = stack_a;
-	target_index = 2147483647;
-	current_pos = 0;
-	found = 0;
-	while (current)
+	min_pos = 0;
+	min_node = get_min_index(*stack_a);
+	current = *stack_a;
+	while (current != min_node)
 	{
-		if (current->index > b_index && current->index < target_index)
-		{
-			target_index = current->index;
-			*pos = current_pos;
-			found = 1;
-		}
+		min_pos++;
 		current = current->next;
-		current_pos++;
 	}
-	return (found);
-}
-
-int	find_smallest_index(t_stack *stack_a)
-{
-	t_stack	*current;
-	int		target_index;
-	int		target_pos;
-	int		current_pos;
-
-	current = stack_a;
-	target_index = 2147483647;
-	target_pos = 0;
-	current_pos = 0;
-	while (current)
-	{
-		if (current->index < target_index)
-		{
-			target_index = current->index;
-			target_pos = current_pos;
-		}
-		current = current->next;
-		current_pos++;
-	}
-	return (target_pos);
-}
-
-int	find_target_position(t_stack *stack_a, int b_index)
-{
-	int		target_pos;
-
-	if (!find_closest_larger_index(stack_a, b_index, &target_pos))
-		target_pos = find_smallest_index(stack_a);
-	return (target_pos);
+	min_cost = calculate_cost(min_pos, size_a);
+	execute_a_rotations(stack_a, &min_cost);
 }
