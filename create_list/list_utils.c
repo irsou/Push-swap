@@ -6,11 +6,11 @@
 /*   By: isousa-s <isousa-s@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 11:23:38 by isousa-s          #+#    #+#             */
-/*   Updated: 2025/03/15 22:09:08 by isousa-s         ###   ########.fr       */
+/*   Updated: 2025/03/16 12:44:21 by isousa-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	is_sorted(t_stack *list)
 {

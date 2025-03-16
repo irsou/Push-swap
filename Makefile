@@ -13,17 +13,17 @@
 NAME = push_swap
 
 SRC = main.c \
-create_list.c \
-temp_functions.c \
+create_list/create_list.c \
 movements/mov_push.c \
 movements/mov_reverse_rotate.c \
 movements/mov_rotate.c \
 movements/mov_swap.c \
-list_utils.c \
+create_list/list_utils.c \
+create_list/temp_functions.c \
 basic_utils.c \
-sort_small.c \
-sort_big.c \
-sort_big_utils.c \
+sort_small/sort_small.c \
+sort_big/sort_big.c \
+sort_big/sort_big_utils.c \
 
 
 OBJ = $(SRC:.c=.o)

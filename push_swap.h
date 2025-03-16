@@ -22,6 +22,19 @@ typedef struct s_node
 	struct s_node				*next;
 }	t_stack;
 
+typedef struct s_stack_info {
+	t_stack *stack;
+	int size;
+} t_stack_info;
+
+typedef struct s_move_cost {
+	int cost_a;
+	int cost_b;
+	int total_cost;
+	int a_pos;
+	int b_pos;
+} t_move_cost;
+
 int			is_valid_number(char *str);
 int			get_max(int a, int b);
 int			get_abs(int x);
@@ -29,6 +42,8 @@ t_stack		*get_min_index(t_stack *stack);
 t_stack		*get_closest_to_target(t_stack *stack_b, int target_value);
 int			count_moves_to_top(t_stack *stack, t_stack *node);
 int			calculate_cost(int pos, int stack_size);
+int			calculate_total_cost(int cost_a, int cost_b);
+int			calculate_move_cost(int pos, int stack_size);
 int			find_target_position(t_stack *stack_a, int b_index);
 int			ft_atoi(const char *str);
 t_stack		*create_node(int value);
