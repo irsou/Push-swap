@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int is_duplicate(t_stack *list, int num)
+int	is_duplicate(t_stack *list, int num)
 {
 	while (list)
 	{

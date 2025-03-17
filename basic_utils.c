@@ -52,9 +52,9 @@ int	get_abs(int x)
 		return (x);
 }
 
-int is_valid_digit(char c)
+int	is_valid_digit(char c)
 {
-  return (c >= '0' && c <= '9');
+	return (c >= '0' && c <= '9');
 }
 
 int	is_valid_int(const char *str)

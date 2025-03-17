@@ -45,10 +45,11 @@ void	sort_five(t_stack **list_a, t_stack **list_b, int *size_b, int *size_a)
 {
 	int		min;
 	int		pos;
+	int		pushed;
 
 	if (is_sorted(*list_a))
 		return ;
-	while (*size_a > 3)
+	while (pushed < 2)
 	{
 		min = find_min(*list_a);
 		pos = find_position(*list_a, min);
@@ -60,10 +61,9 @@ void	sort_five(t_stack **list_a, t_stack **list_b, int *size_b, int *size_a)
 				rra(list_a);
 		}
 		pb(list_a, list_b, size_a, size_b);
+		pushed++;
 	}
 	sort_three(list_a);
-	while (*size_b > 0)
-	{
+	while (*list_b)
 		pa(list_b, list_a, size_b, size_a);
-	}
 }
