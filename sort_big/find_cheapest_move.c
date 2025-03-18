@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_cheapest_move.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: isousa-s <isousa-s@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: isousa-s <isousa-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 16:29:08 by isousa-s          #+#    #+#             */
-/*   Updated: 2025/03/16 16:29:08 by isousa-s         ###   ########.fr       */
+/*   Updated: 2025/03/18 19:45:52 by isousa-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,11 +83,11 @@ void	find_cheapest_move(t_stack_info stack_a_info, t_stack_info stack_b_info,
 {
 	t_stack				*current_b;
 	t_move_cost			current_move;
-	t_move_cost			best_move;
+	int					min_cost;
 	int					b_pos;
 
 	current_b = stack_b_info.stack;
-	best_move.total_cost = 2147483647;
+	min_cost = 2147483647;
 	b_pos = 0;
 	*best_a_pos = 0;
 	*best_b_pos = 0;
@@ -97,9 +97,9 @@ void	find_cheapest_move(t_stack_info stack_a_info, t_stack_info stack_b_info,
 				current_b->index);
 		current_move.b_pos = b_pos;
 		get_best_move_for_b(&current_move, stack_a_info, stack_b_info);
-		if (current_move.total_cost < best_move.total_cost)
+		if (current_move.total_cost < min_cost)
 		{
-			best_move = current_move;
+			min_cost = current_move.total_cost;
 			*best_a_pos = current_move.a_pos;
 			*best_b_pos = current_move.b_pos;
 		}
