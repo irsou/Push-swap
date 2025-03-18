@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_small.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: isousa-s <isousa-s@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: isousa-s <isousa-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 20:35:56 by isousa-s          #+#    #+#             */
-/*   Updated: 2025/03/15 20:35:56 by isousa-s         ###   ########.fr       */
+/*   Updated: 2025/03/18 18:31:44 by isousa-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	sort_five(t_stack **list_a, t_stack **list_b, int *size_b, int *size_a)
 	int		pos;
 	int		pushed;
 
+	pushed = 0;
 	if (is_sorted(*list_a))
 		return ;
 	while (pushed < 2)
