@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_big.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: isousa-s <isousa-s@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: isousa-s <isousa-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 22:11:01 by isousa-s          #+#    #+#             */
-/*   Updated: 2025/03/16 16:29:23 by isousa-s         ###   ########.fr       */
+/*   Updated: 2025/03/22 09:02:41 by isousa-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	find_and_execute_best_move(t_stack **stack_a, t_stack **stack_b,
 	pa(stack_b, stack_a, size_b, size_a);
 }
 
-void	big_sort(t_stack **stack_a, t_stack **stack_b, int *size_a, int *size_b)
+void	sort_big(t_stack **stack_a, t_stack **stack_b, int *size_a, int *size_b)
 {
 	if (is_sorted(*stack_a))
 		return ;

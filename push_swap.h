@@ -70,7 +70,7 @@ void		rrr(t_stack **list_a, t_stack **list_b);
 void		sort_three(t_stack **list_l);
 void		sort_five(t_stack **list_a, t_stack **list_b, int *size_b,
 				int *size_a);
-void		big_sort(t_stack **list_a, t_stack **list_b, int *size_a,
+void		sort_big(t_stack **list_a, t_stack **list_b, int *size_a,
 				int *size_b);
 void		push_to(t_stack **list_src, t_stack **list_dest, int *size_src,
 				int *size_dest);

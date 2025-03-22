@@ -32,7 +32,7 @@ void	assign_sort_type(t_stack **list_a, t_stack **list_b, int *size_a,
 	else if (*size_a <= 5)
 		sort_five(list_a, list_b, size_a, size_b);
 	else
-		big_sort(list_a, list_b, size_a, size_b);
+		sort_big(list_a, list_b, size_a, size_b);
 }
 
 int	process_arguments(int argc, char **argv, t_stack **list_a, int *size_a)
