@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 # include <unistd.h> //write
 # include <stdlib.h> //malloc & free
+# include <stdio.h> //borrar
 
 typedef struct s_node
 {
@@ -83,5 +84,9 @@ void		execute_best_moves(t_stack **stack_a, t_stack **stack_b,
 void		execute_a_rotations(t_stack **stack_a, int *cost_a);
 void		find_cheapest_move(t_stack_info stack_a_info,
 				t_stack_info stack_b_info, int *best_a_pos, int *best_b_pos);
-
+char		**ft_split(char const *s, char c);
+void		*ft_memcpy(void *dest, const void *src, size_t length);
+void		free_split(char **split);
+int			is_duplicate(t_stack *list, int num);
+void		error_and_free(t_stack **list_a, t_stack **list_b);
 #endif

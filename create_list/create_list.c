@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_list.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: isousa-s <isousa-s@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: isousa-s <isousa-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 10:15:51 by isousa-s          #+#    #+#             */
-/*   Updated: 2025/02/15 10:15:51 by isousa-s         ###   ########.fr       */
+/*   Updated: 2025/04/05 10:41:17 by isousa-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,16 +87,14 @@ void	assign_node_index(t_stack *stack)
 	}
 }
 
-void	free_list(t_stack *first)
+void	free_list(t_stack *list)
 {
-	t_stack	*current;
-	t_stack	*next;
+	t_stack	*temp;
 
-	current = first;
-	while (current)
+	while (list)
 	{
-		next = current->next;
-		free(current);
-		current = next;
+		temp = list;
+		list = list->next;
+		free(temp);
 	}
 }
