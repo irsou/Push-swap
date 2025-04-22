@@ -16,9 +16,13 @@ void	assign_sort_type(t_stack **list_a, t_stack **list_b, int *size_a,
 	int *size_b)
 {
 	assign_node_index(*list_a);
-	if (*size_a <= 3)
+	if (*size_a == 2)
+		sort_two(list_a);
+	else if (*size_a == 3)
 		sort_three(list_a);
-	else if (*size_a <= 5)
+	else if (*size_a == 4)
+		sort_four(list_a, list_b, size_a, size_b);
+	else if (*size_a == 5)
 		sort_five(list_a, list_b, size_a, size_b);
 	else
 		sort_big(list_a, list_b, size_a, size_b);

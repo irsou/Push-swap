@@ -68,7 +68,10 @@ void		rr(t_stack **list_a, t_stack **list_b);
 void		rra(t_stack **list_a);
 void		rrb(t_stack **list_b);
 void		rrr(t_stack **list_a, t_stack **list_b);
+void		sort_two(t_stack **list_l);
 void		sort_three(t_stack **list_l);
+void		sort_four(t_stack **list_a, t_stack **list_b, int *size_b,
+				int *size_a);
 void		sort_five(t_stack **list_a, t_stack **list_b, int *size_b,
 				int *size_a);
 void		sort_big(t_stack **list_a, t_stack **list_b, int *size_a,
