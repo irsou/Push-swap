@@ -29,3 +29,18 @@ Example with 3 numbers:
 - `2`-`3`-`1` => rra => `1`-`2`-`3` 
 - `3`-`2`-`1` => sa => `2`-`3`-`1` => rra `1`-`2`-`3` 
 - `1`-`3`-`2` => sa => `3`-`1`-`2` => ra `1`-`2`-`3` 
+
+
+gcc
+
+valgrind -s --leak-check=full ./push_swap 42
+
+
+error
+
+./push_swap "42" "2" 
+ ./push_swap "42" "2"7"4"3"9"
+  ./push_swap "42" "2"7"4"3"9"
+   ./push_swap 42 "333"   
+
+
