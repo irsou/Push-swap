@@ -131,7 +131,10 @@ int	main(int argc, char **argv)
 			return (1);
 	}
 	if (is_sorted(a_stack_info.stack))
+	{
+		free_list(a_stack_info.stack);
 		return (0);
+	}
 	assign_sort_type(&(a_stack_info.stack), &list_b, &(a_stack_info.size),
 		&size_b);
 	return (0);

@@ -31,9 +31,7 @@ sort_big/find_cheapest_move.c \
 
 OBJ = $(SRC:.c=.o)
 
-#CC = cc
-#FLAGS = -Wall -Werror -Wextra
-CC = gcc
+CC = cc
 FLAGS = -Wall -Werror -Wextra -g
 RM = rm -f
 AR = ar rcs

@@ -33,14 +33,27 @@ Example with 3 numbers:
 
 gcc
 
+
+
+
+Checking memory leaks
+
 valgrind -s --leak-check=full ./push_swap 42
+valgrind --leak-check=full ./push_swap "42" 2
+valgrind --leak-check=full ./push_swap 42 "2"
+valgrind --leak-check=full ./push_swap "42" 2  aaaa
+valgrind --leak-check=full ./push_swap "42" 2  111111111111
+valgrind --leak-check=full ./push_swap "42" "2"7"4"3"9"
+valgrind --leak-check=full ./push_swap 42 "333"
+valgrind --leak-check=full ./push_swap "42" "333"
+valgrind --leak-check=full ./push_swap 42 333
+valgrind --leak-check=full ./push_swap "42 5" 2
+valgrind --leak-check=full ./push_swap 42 "5 2"
+valgrind --leak-check=full ./push_swap 42 2 54 -14 37
+ARG="9 3 7 1 5 8 -6 4 2 0"; valgrind --leak-check=full ./push_swap $ARG
 
 
-error
 
-./push_swap "42" "2" 
- ./push_swap "42" "2"7"4"3"9"
-  ./push_swap "42" "2"7"4"3"9"
-   ./push_swap 42 "333"   
+
 
 
