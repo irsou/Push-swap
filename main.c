@@ -26,11 +26,11 @@ void	assign_sort_type(t_stack **list_a, t_stack **list_b, int *size_a,
 		sort_five(list_a, list_b, size_a, size_b);
 	else
 		sort_big(list_a, list_b, size_a, size_b);
-	if(list_a)
+	if (list_a)
 		free_list(*list_a);
-	if(list_b)
+	if (list_b)
 		free_list(*list_b);
-	exit(0);
+	exit (0);
 }
 
 int	process_arguments(int argc, char **argv, t_stack_info *a_stack_info,
@@ -66,12 +66,11 @@ int	process_split_args(char **split_args, t_stack_info *a_stack_info)
 {
 	int		pos;
 	int		num;
-	int			count;
+	int		count;
 
 	count = 0;
-	while(split_args[count])
+	while (split_args[count])
 		count++;
-
 	pos = 0;
 	while (split_args[pos] && count != 1)
 	{
@@ -120,11 +119,8 @@ int	main(int argc, char **argv)
 		return (0);
 	list_b = NULL;
 	size_b = 0;
-	if (argc == 2)
-	{
-		if (!process_one_arg(argv[1], &a_stack_info))
-			return (1);
-	}
+	if (argc == 2 && !process_one_arg(argv[1], &a_stack_info))
+		return (1);
 	else
 	{
 		if (!process_arguments(argc, argv, &a_stack_info, &list_b))

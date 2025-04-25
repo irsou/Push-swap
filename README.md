@@ -51,6 +51,11 @@ valgrind --leak-check=full ./push_swap "42 5" 2
 valgrind --leak-check=full ./push_swap 42 "5 2"
 valgrind --leak-check=full ./push_swap 42 2 54 -14 37
 ARG="9 3 7 1 5 8 -6 4 2 0"; valgrind --leak-check=full ./push_swap $ARG
+ARG="42"; valgrind --leak-check=full ./push_swap $ARG
+ARG="42 3"; valgrind --leak-check=full ./push_swap $ARG
+ARG="42 900 3"; valgrind --leak-check=full ./push_swap $ARG
+ARG="2 -1 0"; ./push_swap $ARG | ./checker_linux $ARG
+valgrind -s --leak-check=full ./push_swap "HOLA" 1 "AAAA"
 
 
 
